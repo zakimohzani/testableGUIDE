@@ -1,0 +1,4 @@
+run the command below in MATLAB:
+
+cd testHarness
+results = runtests(pwd)
