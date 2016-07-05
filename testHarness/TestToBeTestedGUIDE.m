@@ -21,7 +21,7 @@ methods (TestClassSetup)
         testCase.prevDir = pwd;
         testCase.addTeardown(@testCase.changeDirectoryBack);
         import matlab.unittest.fixtures.PathFixture
-
+        
         f = testCase.applyFixture(PathFixture('..'));
         disp(['Added to path: ' f.Folder])
     end
@@ -37,14 +37,10 @@ methods (Test)
         set(pop, 'Value', 2)
 
         OKbut = findobj(h, 'Tag','OKButton');
-        performCallback(OKbut);
+        
+        mootestlib.performCallback(OKbut);
 
         close(h);
-        
-            function performCallback(hObject)
-                callbackCell = get(hObject,'Callback');
-                feval(callbackCell,hObject,[]);
-            end
     end
 end
 

@@ -33,14 +33,9 @@ methods (Test)
         h = genError;
 
         OKbut = findobj(h, 'Tag','OKButton');
-        performCallback(OKbut);
+        mootestlib.performCallback(OKbut);
 
         close(h);
-        
-            function performCallback(hObject)
-                callbackCell = get(hObject,'Callback');
-                feval(callbackCell,hObject,[]);
-            end
     end
 end
 
